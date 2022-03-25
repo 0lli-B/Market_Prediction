@@ -10,10 +10,10 @@ Based on 301 features the return of a portfolio must be predicted. Two approache
 -Building a model and tune the hyperparameter using keras_tuner (two separate inputs: 1 feature & 300 features)<br>
 -After finding the optimal parameters, the model was trained with the whole dataset and the right number of epochs<br>
 <br>
-# Approach 2: LSTM<br>
+<h2>Approach 2: LSTM</h2><br>
 The dataset is allready quite larget (4GB). When creating the time series data it becomes way too large for the RAM.<br>
 First the data was preprocessed and split in parts (LSTM_Preprocessing.ipynb), after that a model was created (LSTM_Model.ipynb):<br>
-## Preprocessing the sequential data:<br>
+<h5>Preprocessing the sequential data:</h5><br>
 -To reduce the memory usage float16 was used as dtype<br>
 -Time series data cannot be shuffles & split like usually, because the sequences have info from the past values (->overfit)<br>
 ->Whole ares must be choosen for training, validation & test - these were picked pased in indexes:<br>
@@ -24,7 +24,7 @@ First the data was preprocessed and split in parts (LSTM_Preprocessing.ipynb), a
 ->created the sequences & adds them to a list (one for the sequential features, one for the target)<br>
 ->when the lists are large enough (31414 datapoints), shuffled them, create an array from them and dump it into the correct folder<br>
 ->16 files for validation, 16 files for testing, 57 for training (215GB)<br>
-## Creating and training a LSTM model<br>
+<h5>Creating and training a LSTM model</h5><br>
 -A function was written to get all the data from the folders and shuffle them<br>
 -Model was created<br>
 -Created a custom callback to lower the RAM after each epoch (needs ~26GB while training)<br>
