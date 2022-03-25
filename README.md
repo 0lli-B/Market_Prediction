@@ -3,7 +3,7 @@ Based on 301 features the return of a portfolio must be predicted. Two approache
 1) Building a neural network with the functional tf API<br>
 2) Building a LSTM model<br>
 <br>
-<h2>Approach 1: (Neural Network)<h2><br>
+<h2>Approach 1: (Neural Network)</h2><br>
 -Visualizing the data and getting more insights<br>
 -Splitting the data<br>
 -Remove outliers<br>
